@@ -22,6 +22,12 @@ select * from user Where userid = 2;
 #Update user set username='tomer' where userid = '4';
 #Delete from user Where userid = 2;
 
+#wild card filter
+select * from user where username like 'rah%';
+select * from user where username like '%sh';
+select * from user where username  like '%h%';
+select * from user where username not like '%h%';
+
 #Sorting
 Select * from user order by username desc;
 
