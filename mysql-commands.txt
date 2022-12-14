@@ -1,0 +1,30 @@
+#Create Database demo;
+#Create schema demo;
+#drop schema demo;
+#CREATE TABLE `user` ( `userid` INT NOT NULL, `username` VARCHAR(50) NOT NULL,  PRIMARY KEY (`userid`));
+#ALTER TABLE user CHANGE COLUMN `username` `user` VARCHAR(50) NOT NULL ;
+#ALTER TABLE `user` ADD COLUMN `salary` INT;
+
+#drop table user;
+
+#ADD data
+Insert into user values(1, 'Rahul');
+#Read data
+Select * from user;
+#Modify
+#Update user set username='tomer';
+#Update user set username='tomer' where username = 'Brijesh';
+#remove
+#Delete from user;
+
+# filter
+select * from user Where userid = 2;
+#Update user set username='tomer' where userid = '4';
+#Delete from user Where userid = 2;
+
+#Sorting
+Select * from user order by username desc;
+
+
+# assignment : post :: post id, post;   comment:: comment id, comment
+# 5 rows in each table
