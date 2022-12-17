@@ -31,6 +31,24 @@ select * from user where username not like '%h%';
 #Sorting
 Select * from user order by username desc;
 
+CREATE TABLE `demo`.`posts` (
+  `postid` INT NOT NULL,
+  `post` VARCHAR(45) NULL,
+  `userid` INT NOT NULL,
+  PRIMARY KEY (`postid`),
+  UNIQUE INDEX `postid_UNIQUE` (`postid` ASC) VISIBLE,
+  INDEX `userid_idx` (`userid` ASC) VISIBLE,
+  CONSTRAINT `userid`
+    FOREIGN KEY (`userid`)
+    REFERENCES `demo`.`user` (`userid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
 
-# assignment : post :: post id, post;   comment:: comment id, comment
-# 5 rows in each table
+    Insert into posts values(1,"hi",1);
+     Insert into posts values(3,"anotherhi",1);
+    insert into posts values(2,"bye", 2);
+    
+    
+    select u.username, p.post from user u, posts p where u.userid = p.userid and (u.userid =1 or u.userid =3);
+    select u.username,p.post from user u inner join posts p on p.userid = u.userid where u.userid =2;
+    select u.username,p.post from user u left join posts p on p.userid = u.userid
