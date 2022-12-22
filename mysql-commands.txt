@@ -52,3 +52,22 @@ CREATE TABLE `demo`.`posts` (
     select u.username, p.post from user u, posts p where u.userid = p.userid and (u.userid =1 or u.userid =3);
     select u.username,p.post from user u inner join posts p on p.userid = u.userid where u.userid =2;
     select u.username,p.post from user u left join posts p on p.userid = u.userid
+
+Select us.username,p.userid as postuser, p.post,c.comment,c.userid 
+from user us, posts p inner join comments c on p.postid= c.postid 
+where c.comment like '%NO%' and c.userid in (
+	select c.userid from comments c inner join user u on c.userid= u.userid where u.userid<10
+    ) 
+and us.userid = c.userid order by us.username
+
+UNION full join
+intersection : inner join
+
+
+select * into userbackp from comments
+
+
+trigger
+function
+storedproc
+view
