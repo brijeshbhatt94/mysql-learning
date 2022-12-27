@@ -71,3 +71,8 @@ trigger
 function
 storedproc
 view
+
+
+copy a table:
+create table order_archived as 
+select * from orders
