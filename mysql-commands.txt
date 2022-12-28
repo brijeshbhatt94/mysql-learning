@@ -77,6 +77,6 @@ copy a table:
 create table order_archived as 
 select * from orders
 
-subquerry example in a insert statement(from youtube)
+subquerry example in a insert statement(from youtube)-to copy a table
 insert into order_archived ()
 select * from orders where order_date < '2019-01-01'
